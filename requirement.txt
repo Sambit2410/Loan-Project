@@ -6,3 +6,4 @@ imbalanced-learn
 seaborn
 joblib
 scipy
+streamlit
