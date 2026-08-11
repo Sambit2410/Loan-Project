@@ -1,7 +1,7 @@
 from joblib import load
 import pandas as pd 
 
-model = load(r"D:\Loan Project\model_dir\Loan_model.joblib")
+model = load(r"model_dir\Loan_model.joblib")
 
 sample_data = pd.DataFrame({
   "Dependents" : ["0"],
