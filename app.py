@@ -7,7 +7,7 @@ from pathlib import Path
 # Load trained model
 #model = load("Loan_model.joblib")
 BASE_DIR = Path(__file__).resolve().parent
-MODEL_PATH = BASE_DIR / "Model_Dir" / "Loan_Model.joblib"
+MODEL_PATH = BASE_DIR / "model_dir" / "Loan_model.joblib"
 
 model = joblib.load(MODEL_PATH)
 
