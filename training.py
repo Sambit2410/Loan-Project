@@ -16,7 +16,7 @@ from sklearn.metrics import (
     roc_auc_score
 )
 
-df = pd.read_csv("D:\INTERNSHIP PYTHON AI ML\Data Preprocessing\loan.csv")
+df = pd.read_csv("loan.csv")
 
 X = df.drop(columns="Loan_Status")
 
@@ -250,4 +250,4 @@ plt.show()
 
 print(df.head())
 
-dump(pipeline, "Loan_model.joblib")
+dump(pipeline, "model_dir\Loan_model.joblib")
