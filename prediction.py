@@ -1,6 +1,8 @@
 from joblib import load
 import pandas as pd 
 
+
+
 model = load(r"model_dir\Loan_model.joblib")
 
 sample_data = pd.DataFrame({

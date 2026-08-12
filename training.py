@@ -16,9 +16,28 @@ from sklearn.metrics import (
     roc_auc_score
 )
 
-df = pd.read_csv("loan.csv")
+from dotenv import load_dotenv
+import os
 
-X = df.drop(columns="Loan_Status")
+load_dotenv()
+
+Dataset_Name = os.getenv("DATASET_NAME")
+Target_Col = os.getenv("TARGET_COL")
+Test_Size = os.getenv("TEST_SIZE")
+Random_state = os.getenv("RANDOM_STATE")
+Model_Path = os.getenv("MODEL_PATH")
+
+
+
+DATASET_NAME = "loan.csv"
+TARGET_COL = "Loan_Status"
+TEST_SIZE = 0.2
+RANDOM_STATE = 42
+MODEL_PATH = "model_dir\Loan_model.joblib"
+
+df = pd.read_csv(DATASET_NAME)
+
+X = df.drop(columns=TARGET_COL)
 
 y = df.Loan_Status
 
@@ -53,8 +72,8 @@ print("Shape y -> ", y.shape)
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
-    test_size=0.2,
-    random_state=42,
+    test_size=TEST_SIZE,
+    random_state= RANDOM_STATE,
     stratify=y
 )
 
@@ -250,4 +269,4 @@ plt.show()
 
 print(df.head())
 
-dump(pipeline, "model_dir\Loan_model.joblib")
+dump(pipeline, MODEL_PATH)
