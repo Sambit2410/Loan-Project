@@ -21,19 +21,12 @@ import os
 
 load_dotenv()
 
-Dataset_Name = os.getenv("DATASET_NAME")
-Target_Col = os.getenv("TARGET_COL")
-Test_Size = os.getenv("TEST_SIZE")
-Random_state = os.getenv("RANDOM_STATE")
-Model_Path = os.getenv("MODEL_PATH")
+DATASET_NAME = os.getenv("DATASET_NAME")
+TARGET_COL = os.getenv("TARGET_COL")
+TEST_SIZE = os.getenv("TEST_SIZE")
+RANDOM_STATE = os.getenv("RANDOM_STATE")
+MODEL_PATH = os.getenv("MODEL_PATH")
 
-
-
-DATASET_NAME = "loan.csv"
-TARGET_COL = "Loan_Status"
-TEST_SIZE = 0.2
-RANDOM_STATE = 42
-MODEL_PATH = "model_dir\Loan_model.joblib"
 
 df = pd.read_csv(DATASET_NAME)
 
